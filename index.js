@@ -12,11 +12,22 @@ const PORT =  process.env.PORT || 3019;
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+let useSSL = false;
+let local = process.env.LOCAL || false;
+if (process.env.DATABASE_URL && !local){
+    useSSL = true;
+}
+
 //connect to the database with connection string
 const connectionString = process.env.DATABASE_URL || 'postgresql://codex:pg123@localhost:5432/avo_shopper';
  const pool = new Pool({
 	 connectionString
  });
+
+ const pool = new Pool({
+    connectionString,
+    ssl : useSSL
+  });
 
 const avoshopper = AvoShopper(pool);
  
