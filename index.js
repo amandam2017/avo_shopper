@@ -24,6 +24,7 @@ const connectionString =
   "postgresql://codex:pg123@localhost:5432/avo_shopper";
 const pool = new Pool({
   connectionString,
+  ssl: useSSL
 });
 
 const avoshopper = AvoShopper(pool);
