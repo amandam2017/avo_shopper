@@ -1,0 +1,36 @@
+<h2>Add new deal</h2>
+
+<form class="form-group" action="/deal/add" method="post">
+
+	<div class="form-group form_container">
+		<h4>Shops</h4>
+		
+		<select name="shop_name">
+			<option value="">Select shop</option>
+			{{#each shops}}
+			<option value="{{name}}">{{name}}</option>
+			{{/each}}
+		</select>
+
+		<div class="form-group row space-bottom">
+			<label for="price" class="col-sm-1 col-form-label">Price</label>
+			<div class="col-sm-6">
+				<input class="form-control" type="text" name="price" id="">	
+    		</div>
+		</div>
+
+		<div class="form-group row">
+			<label for="qty" class="col-sm-1 col-form-label">Quantity</label>
+
+			<div class="col-sm-6">
+				<input class="form-control" type="text" name="qty" id="">
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="btn btn-primary">
+		<input type="submit">
+	</div>
+
+</form>

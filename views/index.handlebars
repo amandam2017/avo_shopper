@@ -1,1 +1,48 @@
 <h2>Best deals</h2>
+
+<div class="image-avo">
+    {{!-- <img src="images/avo.png"> --}}
+</div>
+
+
+    <tr>
+        <th>My deals</th>
+		<th></th>
+
+    </tr>
+
+    {{#each deals}}
+
+    <tr>
+		<td>{{qty}}</td>
+		<td>{{price}}</td>
+		<td>{{shop_id}}</td>
+		<td></td>
+
+		<td></td>
+	</tr>
+
+    {{/each}}
+
+
+<table>
+    <tr>
+        <th>Shop</th>
+        <th>Deals</th>
+    </tr>
+
+    {{#each deals}}
+
+    <tr>
+		<td>{{name}}</td>
+		<td></td>
+	</tr>
+
+    {{/each}}
+</table>
+
+<a href="/deal/add">Add Deal</a><br>
+<a href="/shop/add">Add Shop</a><br>
+<a href="/shop/list">List of Shops</a>
+
+

@@ -2,9 +2,9 @@ let assert = require("assert");
 const pg = require("pg");
 let AvoShopper = require("../avo-shopper");
 const Pool = pg.Pool;
-require('dotenv').config()
+// require('dotenv').config()
 
-const connectionString = process.env.DATABASE_URL || 'postgresql://avos:avos123@localhost:5432/avo_shopper';
+const connectionString = process.env.DATABASE_URL || 'postgresql://codex:pg123@localhost:5432/avo_shopper';
 
 const pool = new Pool({
     connectionString

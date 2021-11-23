@@ -1,0 +1,38 @@
+body {
+	background-color: lightseagreen;
+	color: whitesmoke;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+	margin: auto;
+	width: 80%;
+	margin-top: 5rem;
+}
+
+.space-bottom{
+	margin-bottom: 10px;
+}
+
+h2{
+	text-align: center;
+	font-size: 35px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-weight: 600;
+	border: 2px solid;
+}
+
+th{
+	border: 1pxsolid rgb(29, 51, 14);
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.center {
+	margin: 50px auto;
+	text-align: center;
+}
+
+.form_container{
+	margin-top: 5rem;
+}
