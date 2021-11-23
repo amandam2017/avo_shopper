@@ -62,11 +62,11 @@ app.get("/deal/add", async function (req, res) {
   } catch (error) {}
 });
 
-app.post("/deal/add:deals", function (req, res) {
+app.post("/deal/add:deals", async function (req, res) {
   try {
     console.log(req.body);
     const dealsValues = request.params.deals;
-    avoshopper.createDeal("values of the deals:" + dealsValues);
+    await avoshopper.createDeal("values of the deals:" + dealsValues);
     res.redirect("/");
   } catch (error) {}
 });
@@ -75,7 +75,7 @@ app.post("/deal/add:deals", function (req, res) {
 app.get("/shop/add", function (req, res) {
   try {
     res.render("shop/add", {});
-  } catch (error) {}
+  } catch (error)
 });
 
 app.post("/shop/add", function (req, res) {
