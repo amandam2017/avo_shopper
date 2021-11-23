@@ -43,13 +43,16 @@ let counter = 0;
 //home route to display top 5 deals
 app.get("/", async function (req, res) {
   try {
-    const topDeals = await avoshopper.topFiveDeals();
+	const topDeals = await avoshopper.topFiveDeals();
     // console.log('deals????'+await avoshopper.topFiveDeals())
     res.render("index", {
       topDeals,
       // counter
     });
-  } catch (error) {}
+	  
+  } catch (error) {
+	  
+  }
 });
 
 //add deal and a post route to submit deal to db
@@ -59,7 +62,10 @@ app.get("/deal/add", async function (req, res) {
     res.render("deal/add", {
       shops,
     });
-  } catch (error) {}
+  } catch (error) {
+	console.log(error);
+
+  }
 });
 
 app.post("/deal/add:deals", async function (req, res) {
@@ -68,14 +74,20 @@ app.post("/deal/add:deals", async function (req, res) {
     const dealsValues = request.params.deals;
     await avoshopper.createDeal("values of the deals:" + dealsValues);
     res.redirect("/");
-  } catch (error) {}
+  } catch (error) {
+	console.log(error);
+
+  }
 });
 
 //add shop
 app.get("/shop/add", function (req, res) {
   try {
-    res.render("shop/add", {});
-  } catch (error)
+    res.render("shop/add",);
+  } catch (error){
+	console.log(error);
+
+  }
 });
 
 app.post("/shop/add", function (req, res) {
@@ -83,7 +95,10 @@ app.post("/shop/add", function (req, res) {
     console.log(req.body);
     avoshopper.createShop(req.body.name);
     res.redirect("shop/add");
-  } catch (error) {}
+  } catch (error) {
+	console.log(error);
+
+  }
 });
 
 app.get("/shop/list", async function (req, res) {
@@ -92,7 +107,10 @@ app.get("/shop/list", async function (req, res) {
     res.render("shop/list", {
       shops,
     });
-  } catch (error) {}
+  } catch (error) {
+	  console.log(error);
+
+  }
 });
 
 // start  the server and start listening for HTTP request on the PORT number specified...
