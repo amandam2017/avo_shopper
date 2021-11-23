@@ -24,11 +24,6 @@ const connectionString = process.env.DATABASE_URL || 'postgresql://codex:pg123@l
 	 connectionString
  });
 
- const pool = new Pool({
-    connectionString,
-    ssl : useSSL
-  });
-
 const avoshopper = AvoShopper(pool);
  
 // enable the static folder...
