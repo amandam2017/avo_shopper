@@ -52,8 +52,8 @@ app.get('/deal/add', async function(req, res) {
 
 app.post('/deal/add:deals', function(req,res){
 	console.log(req.body);
-	const dealsValues = req.params.deals
-	avoshopper.createDeal(dealsValues);
+	const dealsValues = request.params.deals
+	avoshopper.createDeal('values of the deals:' +dealsValues);
 	res.redirect('/');
 });
 
